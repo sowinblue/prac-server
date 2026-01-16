@@ -26,8 +26,6 @@ class MyHandler(BaseHTTPRequestHandler):
 host = 'localhost'
 port = 8000
 
-
-
 server = HTTPServer((host,port),MyHandler)
 
 print(f"서버가 시작되었습니다! http://{host}:{port}로 접속 가능")
