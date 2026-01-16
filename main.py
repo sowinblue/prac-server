@@ -1,18 +1,28 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+def maketag(isopen,tagname):
+        if isopen:
+            open = f"<{tagname}>"
+            return open
+        else:
+            close = f"</{tagname}>"
+            return close
+        
+head_content = "안녕하세요"
+head = maketag(True,"h1") + head_content + maketag(False,"h1")
+
+
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")
         self.end_headers()
 
-        message = ("안녕하세요! 만나서 반갑습니다!")
-        self.wfile.write(message.encode('UTF-8'))
+        self.wfile.write(head.encode('UTF-8'))
 
-        print("---요청원문---")
-        print(self.requestline)
-        print(self.headers)
 
+
+    
 host = 'localhost'
 port = 8000
 
