@@ -30,7 +30,7 @@ bodyp5 = maketag(True,nametag[1]) + p_content5 + maketag(False,nametag[1])
 p_content6 = "매슬로우는 하위 욕구가 비교적 충족되어야 상위 욕구로 이동한다고 주장한다."
 bodyp6 = maketag(True,nametag[1]) + p_content6 + maketag(False,nametag[1])
 
-p_content7 = "의견: <br> 주장하는 욕구 이론에 대한 구성은 동의하나 순서가 반드시 단계를 거쳐 발현되는 것은 아니다.<br>사람마다 주어진 환경과 생각하는 우선 순위가 다르기 때문에 순서가 다를 수 있고, <br> 동시에 발현할 수 있다고 생각 하기 때문이다. "
+p_content7 = "의견: <br> 주장하는 욕구 이론에 대한 구성은 동의하나 순서가 반드시 단계를 거쳐 발현되는 것은 아니다.<br>사람마다 주어진 환경과 생각하는 우선 순위가 다르기 때문에 순서가 다를 수 있고, <br> 동시에 발현이 되는 경우도 존재한다. "
 bodyp7 = maketag(True,nametag[1]) + p_content7 + maketag(False,nametag[1])
 
 full_body = bodyp + bodyp2 + bodyp3 +  bodyp4 + bodyp5 + bodyp6 + bodyp7
@@ -46,7 +46,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html; charset=utf-8")
         self.end_headers()
         
-        
+
         self.wfile.write(bodyh.encode('UTF-8'))
         self.wfile.write(full_body.encode('UTF-8'))
         self.wfile.write(logprint.encode('UTF-8'))
