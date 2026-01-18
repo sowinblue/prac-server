@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+# 태그 생성
 def maketag(isopen,tagname):
         if isopen:
             return f"<{tagname}>"
@@ -10,7 +11,7 @@ def maketag(isopen,tagname):
 head_content = "안녕하세요"
 head = maketag(True,"h1") + head_content + maketag(False,"h1")
 
-
+#server get 응답 설정
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
