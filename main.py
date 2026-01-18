@@ -15,7 +15,7 @@ head = maketag(True,"h1") + head_content + maketag(False,"h1")
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
-        self.send_header("Content-type", "text/plain; charset=utf-8")
+        self.send_header("Content-type", "text/html; charset=utf-8")
         self.end_headers()
 
         self.wfile.write(head.encode('UTF-8'))
