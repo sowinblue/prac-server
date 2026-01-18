@@ -7,13 +7,17 @@ def maketag(isopen,tagname):
         else:
             return f"</{tagname}>"
 
-nametag = ["h1","p","div"]
+H1 = "h1"
+P = "p"
+DIV = "div"
+
+
         
-h1_content = "안녕하세요!"
-bodyh = maketag(True,nametag[0]) + h1_content + maketag(False,nametag[0])
+h1_content = "안녕하세요~"
+bodyh = maketag(True,H1) + h1_content + maketag(False,H1)
 
 p_content = "만나서 반갑습니다."
-bodyp = maketag(True,nametag[1]) + p_content + maketag(False,nametag[1])
+bodyp = maketag(True,P) + p_content + maketag(False,P)
 
 
 #server get 응답 설정
