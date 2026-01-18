@@ -6,10 +6,15 @@ def maketag(isopen,tagname):
             return f"<{tagname}>"
         else:
             return f"</{tagname}>"
+
+nametag = ["h1","p","div"]
         
-        
-head_content = "안녕하세요"
-head = maketag(True,"h1") + head_content + maketag(False,"h1")
+h1_content = "안녕하세요!"
+bodyh = maketag(True,nametag[0]) + h1_content + maketag(False,nametag[0])
+
+p_content = "만나서 반갑습니다."
+bodyp = maketag(True,nametag[1]) + p_content + maketag(False,nametag[1])
+
 
 #server get 응답 설정
 class MyHandler(BaseHTTPRequestHandler):
@@ -18,7 +23,8 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html; charset=utf-8")
         self.end_headers()
 
-        self.wfile.write(head.encode('UTF-8'))
+        self.wfile.write(bodyh.encode('UTF-8'))
+        self.wfile.write(bodyp.encode('UTF-8'))
 
 
 
