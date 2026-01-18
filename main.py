@@ -2,11 +2,10 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 
 def maketag(isopen,tagname):
         if isopen:
-            open = f"<{tagname}>"
-            return open
+            return f"<{tagname}>"
         else:
-            close = f"</{tagname}>"
-            return close
+            return f"</{tagname}>"
+        
         
 head_content = "안녕하세요"
 head = maketag(True,"h1") + head_content + maketag(False,"h1")
